@@ -560,7 +560,7 @@ var prettyPrint = (function(){
 					);
 				}
 				
-				var ret = (settings.expanded || hasRunOnce) ? table.node : util.expander(
+				var ret = (settings.expanded || !hasRunOnce) ? table.node : util.expander(
 					util.stringify(obj),
 					'Click to show more',
 					function() {
@@ -725,7 +725,6 @@ var prettyPrint = (function(){
 		maxStringLength: 40,
 		maxArray: Infinity,  // default is unlimited
 		filter: Object.prototype.hasOwnProperty,
-		maxTextLen: 40,
 		styles: {
 			array: {
 				th: {
